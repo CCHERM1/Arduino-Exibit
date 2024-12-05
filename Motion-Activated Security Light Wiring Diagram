@@ -1,5 +1,7 @@
 Motion-Activated Security Light Wiring Diagram
+
 Components
+
 Arduino Mega 2560
 PIR Motion Sensor
 LED (any color)
@@ -7,21 +9,26 @@ Resistor (220Ω)
 Breadboard (optional for organizing connections)
 Jumper Wires
 Wiring Connections
-1. PIR Motion Sensor
+
+PIR Motion Sensor
+
 VCC Pin: Connect to the 5V pin on the Arduino.
 GND Pin: Connect to any GND pin on the Arduino.
-OUT Pin: Connect to Digital Pin 2 on the Arduino.
-2. LED with Resistor
+OUT Pin: Connect to Digital Pin 5 on the Arduino.
+LED with Resistor
+
 Anode (long leg):
 Connect to Digital Pin 13 on the Arduino via a 220Ω resistor.
 Cathode (short leg):
 Connect directly to the GND pin on the Arduino.
-3. Breadboard Setup
+Breadboard Setup
+
 Use a breadboard for better organization:
 Connect the Arduino’s 5V pin to the positive rail on the breadboard.
 Connect the Arduino’s GND pin to the negative rail on the breadboard.
 Use these rails to power the PIR sensor and LED circuit.
 Step-by-Step Instructions
+
 Place the PIR motion sensor and LED near the Arduino on the breadboard (if used).
 Connect the wires as described above, ensuring tight connections.
 Double-check that the resistor is placed between the LED anode and Pin 13.
@@ -29,11 +36,15 @@ Verify all components are oriented correctly:
 PIR sensor pins are labeled as VCC, OUT, and GND.
 LED pins are oriented as anode (long leg) and cathode (short leg).
 Power the Arduino via USB or an external power source.
-
 Testing the Circuit
+
 Power on the Arduino and wait for the PIR sensor to stabilize (30–60 seconds).
 Observe the LED behavior:
 Turns ON when motion is detected.
-Turns OFF after motion ceases (based on the code provided).
+Turns OFF when no motion is detected (based on the updated code).
+Notes on Code Changes:
+
+The PIR motion sensor's output pin has been moved from Digital Pin 2 to Digital Pin 5.
+The code reads from Pin 5 and uses Pin 13 to control the LED. Ensure the wiring matches these pin changes for the updated setup.
 
 
